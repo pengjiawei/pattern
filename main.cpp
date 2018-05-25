@@ -5,6 +5,9 @@
 #include "erase.h"
 #include "strategy.h"
 #include "proxy.h"
+#include "factory.h"
+#include "decorator.h"
+#include "builder.h"
 int main() {
     //modulemethod test
 //    everyOne* everyOne1 = new developer("A");
@@ -37,7 +40,23 @@ int main() {
 //    strategyMgr1 = new strategyMgr(new strategyB);
 //    strategyMgr1->actionWhat();
     //proxy
-    proxy* p = new proxy(new concreteObject());
-    p->doProxy();
-    return 0;
+//    proxy* p = new proxy(new concreteObject());
+//    p->doProxy();
+//    return 0;
+    //factory
+//     factory* factory1 = new factoryA();
+//     manager* manager1 = new manager();
+//     manager1->createProduct(factory1)->print();
+//    factory1 = new factoryB;
+//    manager1->createProduct(factory1)->print();
+    //decorator
+//    component* c = new componentA();
+//    decorator* d = new decoratorA(c);
+//    c->operate();
+//    printf("after decorated\n");
+//    d->decorate();
+
+    demo::builder* b = new demo::builder();
+    demo d = b->setId(10)->setName("worker")->build();
+    std::cout << d.name <<" , "<<d.id;
 }
